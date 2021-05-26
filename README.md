@@ -1,2 +1,6 @@
-# web-231
-Assignments for web-231, Bellevue University
+# WEB 231 Enterprise JavaScript I
+This repository contains assignments for web-231.
+## Contributors
+* Mark Seymour
+* Keith Hall
+ 
