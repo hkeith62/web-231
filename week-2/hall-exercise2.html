@@ -1,0 +1,38 @@
+<!--
+    Title: WEB 231 – Enterprise JavaScript I
+    Author: Professor Krasso
+    Date: 06/23/2021
+    Modified By: Keith Hall
+    Description: This is the HTML landing page for web-231 assignments, projects, and biosite.
+--> 
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+<meta charset="UTF-8" /> 
+<title>WEB 231- Enterprise Javascript 1</title>
+<meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+<meta name="keywords" content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
+<meta name="robots" content="nofollow" />
+<meta name="author" content="Keith Hall" />
+<link rel="stylesheet" href="../site.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,500&display=swap" rel="stylesheet" />
+</head>
+<body>
+<h1>Exercise 2.2- Hello JavaScript</h1>
+<button id="btnMyCourse" onclick="myFunction()">What course am I taking?</button> 
+<p id= "txtMyWorld">You are now in Professor Krasso's world!</p>
+<a href= "../index.html" class="return-home">Return</a>
+<script>
+document.getElementById("btnMyCourse").addEventListener("click", function() {
+  document.getElementById("txtMyWorld").innerHTML = "You are now in hall's world!";
+});
+ 
+  function myFunction() {
+    alert ("WEB 231 – Enterprise JavaScript I")
+}
+</script>
+</body>
+</html>
