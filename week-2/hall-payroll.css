@@ -1,0 +1,10 @@
+/**
+    Title: WEB 231 – Enterprise JavaScript I
+    Author: Professor Krasso
+    Date: 05/30/2021
+    Modified By: Keith Hall
+    Description: This is the css style sheet for the HTML landing page for web-231 assignments, projects, and biosite. 
+*/
+ul {
+	border: 1px dotted red;
+}
