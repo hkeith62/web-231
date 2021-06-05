@@ -56,17 +56,23 @@ document.getElementById("txtFirstNameLudgwig").innerHTML = "Johann";
 document.getElementById("txtLastNameBeethoven").innerHTML = "Bach";
 document.getElementById("txtAddressLudgwig").innerHTML = "505 Main Street";
 document.getElementById("txtPayRateLudgwig").innerHTML = "My First JavaScript";
-document.getElementById("txtHireDateLudgwig").innerHTML = "Hello World"; 
+  var d = new Date();
+  var n = d.toLocaleDateString();
+  document.getElementById("txtHireDateLudgwig").innerHTML = n;
 document.getElementById("txtFirstNameJohann").innerHTML = "Johann";
 document.getElementById("txtLastNameBach").innerHTML = "Bach";
 document.getElementById("txtAddressJohann").innerHTML = "512 Main Street";
 document.getElementById("txtPayRateJohann").innerHTML = "My First JavaScript";
-document.getElementById("txtHireDateJohann").innerHTML = "Hello World";   
+  var d = new Date();
+  var n = d.toLocaleDateString(); 
+  document.getElementById("txtHireDateJohann").innerHTML = n;   
 document.getElementById("txtFirstNameWolfgang").innerHTML = "Wolfgang";
 document.getElementById("txtLastNameMozart").innerHTML = "Bach";
 document.getElementById("txtAddressWolfgang").innerHTML = "600 Main Street";
 document.getElementById("txtPayRateWolfgang").innerHTML = "My First JavaScript";
-document.getElementById("txtHireDateWolfgang").innerHTML = "My First JavaScript";
-</script>
+  var d = new Date();
+  var n = d.toLocaleDateString();
+  document.getElementById("txtHireDateWolfgang").innerHTML = n;
+</script> 
 </body>
 </html>
