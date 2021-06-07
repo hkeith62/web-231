@@ -21,17 +21,19 @@
 <body>
     <div id= "container">
         <h1 class= "app-header">Exercise 2.2- Hello JavaScript</h1>
+   <!-- Onclick Button -->      
             <button id="btnMyCourse" onclick="myFunction()">What course am I taking?</button> 
             <p id= "txtMyWorld">You are now in Professor Krasso's world!</p>
             <a href= "../index.html" class="return-home">Return</a>
         <script>
+            // Event listener
           document.getElementById("btnMyCourse").addEventListener("click", function() {
           document.getElementById("txtMyWorld").innerHTML = "You are now in Hall's world!";
-});
+});        // Javascript alert
           function myFunction() {
             alert ("WEB 231 – Enterprise JavaScript I")
 }
         </script>
-</div>
+    </div>
 </body>
 </html>
