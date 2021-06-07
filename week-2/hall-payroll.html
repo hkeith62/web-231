@@ -22,9 +22,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+<!-- Content container -->
     <div id= "container">
         <h1 id= "payroll-header">Payroll System</h1>
         <h3>Employee Record 1</h3>
+<!-- Ordered lists start here -->
             <ul>
 		        <li id= "txtFirstNameLudgwig">L</li>
 			    <li id= "txtLastNameBeethoven">B</li>
@@ -50,12 +52,15 @@
 		    </ul>
 	    <a href= "../index.html" class="return-home">Return</a>
         <script>
+		//This code binds the variable value to the list item div.
           document.getElementById("txtFirstNameLudgwig").innerHTML = "Johann";
           document.getElementById("txtLastNameBeethoven").innerHTML = "Bach";
           document.getElementById("txtAddressLudgwig").innerHTML = "505 Main Street";
+		  // Payrate was is formatted to one decimal place.
 		    var num = 18.885;
             var n = num.toFixed(1);
           document.getElementById("txtPayRateLudgwig").innerHTML = n;
+		  // Hire date is formatted as date object and converted to a local date string.
             var d = new Date();
             var n = d.toLocaleDateString();
           document.getElementById("txtHireDateLudgwig").innerHTML = n;
