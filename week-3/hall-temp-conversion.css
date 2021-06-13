@@ -1,15 +1,34 @@
-
-p  {
+/**
+    Title: WEB 231 – Enterprise JavaScript I
+    Author: Professor Krasso
+    Date: 05/30/2021
+    Modified By: Keith Hall
+    Description: This is the css style sheet for web-231 assignment 3, temperature conversion app. 
+*/
+.app-header {
 	text-align: center;
 }
-
+p  {
+	text-align: center;
+	font-size: 28px;
+	margin-top: 0;
+}
+/* Imput field styling */
 #txtFahrenheit  {
-	padding: 12px 20px;
+	padding: 12px 35px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 16px;
 }
- 
+.form-feild {
+	margin-left: 28px;
+}
+/* Convert temperature button styling */
+.btn {
+	border-radius: 4px;
+	 padding: 15px 97px;
+}
  
