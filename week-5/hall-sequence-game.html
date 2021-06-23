@@ -1,0 +1,71 @@
+<!--
+    Title: WEB 231 – Enterprise JavaScript I
+    Author: Professor Krasso
+    Date: 05/30/2021
+    Modified By: Keith Hall
+    Description: This is the HTML page for web-231 assignment 4, numbers game app.
+--> 
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8" /> 
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+    <meta name="keywords" content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
+    <meta name="robots" content="noindex" />
+    <meta name="author" content="Keith Hall" />
+	<link rel="stylesheet" href="../global.css" />
+	<link rel="stylesheet" href="hall-sequence-game.css" />
+    <!-- Google fonts for Oswald -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+	<!-- Card content starts here. -->
+	    <div class= "card">
+		    <h1 class= "app-header">Welcome to the sequence game!</h1>
+		    <div class= "card-title">Sequence Selection Form</div>
+			     
+				    <div class= "form-feild">
+					    <label for="txtMyNumber">Choose a number sequence:</label>
+						<select name="menu" id= "sequence" class="drop-down-menu">
+						    <option value="select">Select</option>
+                            <option value="fibonacci ">Fibonacci Sequence</option>
+                            <option value="even">Even Numbers</option>
+                            <option value="odd">Odd Numbers</option>
+						</select>
+					</div>
+				    <div class="form-field">
+					<!-- HTML for styling the conversion button and onclick event. -->
+                        <button type="submit" id= "btnDisplaySequence" onclick="myFunction()">Display Sequence</button>
+                    </div>
+		</div>
+	    <div class= "card">
+		    <div class= "card-title">Sequence Results</div> 
+		    <p id= "demo"></p>
+	    </div>
+		 
+	<a href= "../index.html" class="return-home">Return</a>
+<script> 
+// Generates a random value.
+const rud = Math.floor(Math.random() * 10 + 1);
+// counts the number of guesses to arrive at the correct number.
+ 
+  function myFunction() {  
+   // number inputed by the user at button click.     
+  const myNumber = document.getElementById("txtMyNumber").value;
+   
+    if(myNumber == rud) {  
+      document.getElementById("demo").innerHTML = "Congradulations! You picked the correct number!";
+	
+  } else if(myNumber > rud) { // if guessed number is greater than the random number.     
+    document.getElementById("demo").innerHTML = "The number is not" + " " + (myNumber)
+	+ "." + " " + "Try a smaller number.";
+	
+  } else {    //if guessed number is less than the random number.              
+    document.getElementById("demo").innerHTML = "The number is not" + " " + (myNumber)
+	+ "." + " " + "Try a larger number.";
+  }
+}
+</script>
+</body>
+</html>
