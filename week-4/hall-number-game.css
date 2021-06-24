@@ -22,7 +22,7 @@ p  {
 }
 /* Container for results button */
 .card-title {
-	padding: 20px;
+ 	padding: 54px 0 6px 0;
 }
 /* Imput field styling */
 #txtMyNumber  {
@@ -32,7 +32,6 @@ p  {
     border: 1px solid #ccc;
     box-sizing: border-box;
     font-size: 16px;
-	border-radius: 4px;
 }
 .form-feild {
 	margin-left: 128px;
