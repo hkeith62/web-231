@@ -28,9 +28,9 @@
   <label for="txtMyNumber">Choose a number sequence:</label>
   <select name= "menu" id="sequence" class= "drop-down-menu">
     <option value="select">Select</option>
-    <option value="fibonacci">Fibonacci</option>
-    <option value="even">Even</option>
-    <option value="odd">Odd</option>
+    <option value="fibonacci">Fibonacci Sequence</option>
+    <option value="even">Even Numbers</option>
+    <option value="odd">Odd Numbers</option>
   </select>
   </div>
   <div class="form-field">
@@ -86,7 +86,7 @@ function myFunction() {
      oddNumbers++;
   }
   while (oddNumbers < 20); 
-   document.getElementById("demo").innerHTML = text.slice(2, -2);
+   document.getElementById("demo").innerHTML = text.slice(0, -2);
   }
     else {
     alert("Invalid selection, please try again");

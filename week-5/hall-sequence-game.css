@@ -10,14 +10,13 @@
 }
 /* Display sequence button styling */
 #btnDisplaySequence {
-	width: 45%;
-	padding: 14px;  
+	width: 46.5%;
+	padding: 16px;  
 	background-color: #4F3674;
     color: #fff;
 	font-size: 16px;
 	border-radius: 4px;
-	margin: 20px 0 0 108px;
-	border-radius: 4px;
+	margin: 20px 0 0 110px;
 }
 #btnDisplaySequence:hover {
 	background-color: #D6A800;
@@ -50,7 +49,7 @@ p  {
     font-size: 16px;
 }
 .form-feild {
-	margin-left: 128px;
+	margin-left: 132px;
 }
  
  
