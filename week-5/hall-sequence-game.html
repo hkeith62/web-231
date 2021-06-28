@@ -3,7 +3,7 @@
     Author: Professor Krasso
     Date: 05/30/2021
     Modified By: Keith Hall
-    Description: This is the HTML page for web-231 assignment 4, numbers game app.
+    Description: This is the HTML page for web-231 assignment 5, sequence game app.
 --> 
 <!DOCTYPE html>
 <html lang="en"> 
@@ -21,38 +21,39 @@
 </head>
 <body>
 	 <!-- Card content starts here. -->
-<div class= "card">
-  <h1 class= "app-header">Welcome to the sequence game!</h1>
-   <div class= "card-title">Sequence Selection Form</div>
-  <div class= "form-feild">
-  <label for="txtMyNumber">Choose a number sequence:</label>
-  <select name= "menu" id="sequence" class= "drop-down-menu">
-    <option value="select">Select</option>
-    <option value="fibonacci">Fibonacci Sequence</option>
-    <option value="even">Even Numbers</option>
-    <option value="odd">Odd Numbers</option>
-  </select>
-  </div>
-  <div class="form-field">
-    <!-- HTML for styling the conversion button and onclick event. -->
-      <button type="submit" id= "btnDisplaySequence" onclick="myFunction()">Display Sequence</button>
-  </div>
-</div>
-  <div class= "card">
+    <div class= "card">
+    <h1 class= "app-header">Welcome to the sequence game!</h1>
+        <div class= "card-title">Sequence Selection Form</div>
+            <div class= "form-feild">
+            <label for= "sequence">Choose a number sequence:</label> 
+            <select name= "menu" id="sequence" class= "drop-down-menu">
+                <option value="select">Select</option>
+                <option value="fibonacci">Fibonacci Sequence</option>
+                <option value="even">Even Numbers</option>
+                <option value="odd">Odd Numbers</option>
+            </select>
+        </div>
+        <div class="form-field">
+            <!-- HTML for styling the conversion button and onclick event. -->
+            <button type="submit" id= "btnDisplaySequence" onclick="myFunction()">Display Sequence</button>
+        </div>
+    </div>
+    <div class= "card">
 		<div class= "card-title">Sequence Results</div>
            <p id="demo"></p>
         </div>
- <a href= "../index.html" class="return-home">Return</a>
- <script>
+    <div id= "return-home-container"><a href= "../index.html" class="return-home">Return</a></div>
+<script>
 let choice;
 let num1 = 0, num2 = 1, next;
 let fibonacciSequenceText = "";
-
 function myFunction() {
  let text = "";
  let i = 0;
  let oddNumbers = 1;
+ // Captures the values from the select list.
  let x = document.getElementById("sequence").value;
+ // Defines values for each item in the select list
  let fibonacci = document.getElementById("sequence").value = "fibonacci";
  let even = document.getElementById("sequence").value = "even"; 
  let odd = document.getElementById("sequence").value = "odd";
@@ -64,10 +65,12 @@ function myFunction() {
     num1 = num2;
     num2 = next;
   }
+  // If fibonacci is the selected value
   if(x === fibonacci) {
   choice = fibonacciSequenceText.slice(0, -2);
   document.getElementById("demo").innerHTML = choice;
   } 
+   // If even is the selected value
    else if (x === even) {
       do {
     text += (i + ", ");
@@ -78,6 +81,7 @@ function myFunction() {
   while (i < 20);
   document.getElementById("demo").innerHTML = text.slice(2, -2);
   }
+   // If odd is the selected value
   else if (x === odd) {
       do {
     text += (oddNumbers + ", ");
@@ -88,6 +92,7 @@ function myFunction() {
   while (oddNumbers < 20); 
    document.getElementById("demo").innerHTML = text.slice(0, -2);
   }
+   // If eselect is the chosen value
     else {
     alert("Invalid selection, please try again");
     }

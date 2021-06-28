@@ -3,7 +3,7 @@
     Author: Professor Krasso
     Date: 05/30/2021
     Modified By: Keith Hall
-    Description: This is the css style sheet for web-231 assignment 4, number game app. 
+    Description: This is the css style sheet for web-231 assignment 5, sequence game app. 
 */
 .app-header {
 	text-align: center;
@@ -26,21 +26,22 @@ p  {
 	clear: left;
 	text-align: center;
 	font-size: 28px;
-	margin-top: 0;
 }
-.return-home {
-	margin-left: 270px;  
+/* Positions return-home link */
+#return-home-container {
+margin-left: 270px;
+margin-top: 18px;
 }
 .card {
-	margin: auto;
-	 
+	margin: auto; 
 }
 /* Container for results button */
 .card-title {
-	padding: 54px 0 6px 0;
+	margin-top: 50px;
+	margin-bottom: 25px;
 }
-/* Imput field styling */
-#txtMyNumber  {
+/* Label and select input styling */
+#sequence  {
 	padding: 12px 32px;
     margin: 15px 0;
     display: inline-block;
