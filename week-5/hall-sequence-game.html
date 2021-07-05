@@ -20,85 +20,80 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-	 <!-- Card content starts here. -->
-    <div class= "card">
-    <h1 class= "app-header">Welcome to the sequence game!</h1>
-        <div class= "card-title">Sequence Selection Form</div>
-            <div class= "form-feild">
+	<!-- Card content starts here. -->
+	<div class= "card">
+		<h1 class= "app-header">Welcome to the sequence game!</h1>
+		<div class= "card-title">Sequence Selection Form</div>
+	    <div class= "form-feild">
             <label for= "sequence">Choose a number sequence:</label> 
-            <select name= "menu" id="sequence" class= "drop-down-menu">
-                <option value="select">Select</option>
+            <select name= "menu" id="sequence" class= "drop-down-menu">  <!-- Favorite books card container. -->
+                <option value="select" selected>Select</option>
                 <option value="fibonacci">Fibonacci Sequence</option>
                 <option value="even">Even Numbers</option>
                 <option value="odd">Odd Numbers</option>
             </select>
         </div>
-        <div class="form-field">
-            <!-- HTML for styling the conversion button and onclick event. -->
-            <button type="submit" id= "btnDisplaySequence" onclick="myFunction()">Display Sequence</button>
+	    <div class="form-field">
+		    <!-- HTML for styling the conversion button and onclick event. -->
+             <button type="submit" id= "btnDisplaySequence" onclick="myFunction()">Display Sequence</button>
         </div>
     </div>
-    <div class= "card">
-		<div class= "card-title">Sequence Results</div>
-           <p id="demo"></p>
-        </div>
-     
-<script>
-let choice;
+	<div class= "card">
+		<div class= "card-title">Results</div> 
+		    <p id= "demo"></p>
+	    </div>
+    <div id= "return-home-container">
+	    <a href= "../index.html" class="return-home">Return</a>
+	</div>
+<script> 
 let num1 = 0, num2 = 1, next;
 let fibonacciSequenceText = "";
-function myFunction() {
- let text = "";
- let i = 0;
- let oddNumbers = 1;
- // Captures the values from the select list.
- let x = document.getElementById("sequence").value;
- // Defines values for each item in the select list
- let fibonacci = document.getElementById("sequence").value = "fibonacci";
- let even = document.getElementById("sequence").value = "even"; 
- let odd = document.getElementById("sequence").value = "odd";
- let select = document.getElementById("sequence").value = "select";
  
- while(num1<40)
-  {
+function myFunction() {
+  let evenNumbers = "";
+  let oddNumbers = "";
+  let i = 0;
+  let choice = document.getElementById("sequence").value;    // Captures the values from the select list.
+  // Defines values for each item in the select list
+  let fibonacci = document.getElementById("sequence").value = "fibonacci";
+  let even = document.getElementById("sequence").value = "even"; 
+  let odd = document.getElementById("sequence").value = "odd";
+  let select = document.getElementById("sequence").value = "select";
+
+  while (num1<40){ // Loop of fibonacci numbers less than 40.
     fibonacciSequenceText +=
     (num1 + ", ");
     next = num1 + num2;
     num1 = num2;
     num2 = next;
   }
-  // If fibonacci is the selected value
-  if(x === fibonacci) {
-  choice = fibonacciSequenceText.slice(0, -2);
-  document.getElementById("demo").innerHTML = choice;
-  } 
-   // If even is the selected value
-   else if (x === even) {
-      do {
-    text += (i + ", ");
-     i += 1;
-     num1 += 2;
-     i++;
+  if (choice === fibonacci) {  // If fibonacci is the selected value
+     document.getElementById("demo").innerHTML = fibonacciSequenceText.slice(0, -2); 
+     document.getElementById("sequence").value = "fibonacci";
   }
-  while (i < 20);
-  document.getElementById("demo").innerHTML = text.slice(2, -2);
-  }
-   // If odd is the selected value
-  else if (x === odd) {
-      do {
-    text += (oddNumbers + ", ");
-     oddNumbers += 1;
-     num1 += 1;
-     oddNumbers++;
-  }
-  while (oddNumbers < 20); 
-   document.getElementById("demo").innerHTML = text.slice(0, -2);
-  }
-   // If eselect is the chosen value
-    else {
-    alert("Invalid selection, please try again");
+  else if (choice === even) {  // If even is the selected value
+    do {
+      evenNumbers += (i + ", ");
+      i += 1;
+      num1 += 2;
+      i++;
     }
+    while (i < 20) {
+      document.getElementById("demo").innerHTML = evenNumbers.slice(2, -2);
+      document.getElementById("sequence").value = "even"; 
+    }
+  }
+  else if (choice === odd) {  // If odd is the selected value
+    for (let i = 1; i < 20; i += 2) {
+      oddNumbers +=  i + ", ";
+    }
+      document.getElementById("demo").innerHTML = oddNumbers.slice(0, -1);
+      document.getElementById("sequence").value = "odd";	
+  }
+  else {
+    alert("Invalid selection, please try again");
+  }
 }
-</script> 
+</script>
 </body>
 </html>

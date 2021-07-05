@@ -78,8 +78,8 @@ a:hover {
     color:  #4F3674;
 } 
 .drop-down-menu {
-	width: 28%;
-	padding: 12px 20px 12px 20px;
+	width: 30%;
+	padding: 12px 25px 12px 10px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;

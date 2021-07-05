@@ -3,7 +3,7 @@
     Author: Professor Krasso
     Date: 05/30/2021
     Modified By: Keith Hall
-    Description: This is the HTML page for web-231 assignment 5, sequence game app.
+    Description: This is the HTML page for web-231 assignment 6, In-N-Out-Books.
 --> 
 <!DOCTYPE html>
 <html lang="en"> 
@@ -22,12 +22,12 @@
 <body>
 	 <!-- Card content starts here. -->
     <div class= "card">
-    <h1 class= "app-header">Welcome to In-N-Out-Books</h1>
+        <h1 class= "app-header">Welcome to In-N-Out-Books</h1>
         <div class= "card-title">My Favorites</div>
             <div class= "form-feild">
                 <label for= "sequence">Choose a listing:</label> 
-                <select name= "menu" id="favoriteList" class= "drop-down-menu">
-                    <option value="select">Select</option>
+                <select name= "favorites" id="favoriteList" class= "drop-down-menu"> <!-- Select form field. -->
+                    <option value="select" selected>Select</option>
                     <option value="books">Top 3 Favorite Books</option>
                     <option value="authors">Top 3 Favorite Authors</option>
                 </select>
@@ -37,90 +37,95 @@
                 <button type="submit" id= "btnDisplayListing" onclick="myFunction()">Display Listing</button>
             </div>
     </div>
-		    <div id= "return-home-container"><a href= "../index.html" class="return-home">Return</a></div>
-	<div id= "favorite-books">
+    <div id= "return-home-container"><a href= "../index.html" class="return-home">Return</a></div>
+	<div id= "favorite-books">  <!-- Favorite books card container. -->
 	<div class= "card">
-        <div class= "card-title">Top 3 Favorite Books</div>
-            <div class= "card-content">
-                <br />
-                <table id="books">
-                    <tr>
-                        <th>ISBN</th>
-                        <th>Title</th>
-					    <th>Pages</th>
-                    </tr>
-                    <tr>
-                        <td>0261103571</td>
-                        <td>The Great Gatsby</td>
-					    <td>122</td>
-                    </tr>
-				    <tr>
-                        <td>1514297272</td>
-                        <td>War and Peace</td>
-					    <td>1225</td>
-                    </tr>
-                    <tr>
-                        <td>1514298139</td>
-                        <td>Fahrenheit 451</td>
-					    <td>256</td>
-                    </tr>
-                </table>
+    <div class= "card-title">Top 3 Favorite Books</div>
+        <div class= "card-content">
+            <br />
+            <table id="books">
+                <tr>
+                    <th>ISBN</th>
+                    <th>Title</th>
+					<th>Pages</th>
+                </tr>
+                <tr>
+                    <td>0261103571</td>
+                    <td>The Great Gatsby</td>
+					<td>122</td>
+                </tr>
+				<tr>
+                    <td>1514297272</td>
+                    <td>War and Peace</td>
+					<td>1225</td>
+                </tr>
+                <tr>
+                    <td>1514298139</td>
+                    <td>Fahrenheit 451</td>
+					<td>256</td>
+                </tr>
+            </table>
         </div>
-        </div>		
+    </div>		
     </div> 
-	<div id= "favorite-authors">
+	<div id= "favorite-authors"><!-- Favorite authors card container. -->
 	<div class= "card">
-        <div class= "card-title">Top 3 Favorite Authors</div>
-            <div class= "card-content">
-                <br />
-                <table id="books">
-                    <tr>
-                        <th>Name</th>
-                        <th>Genre</th>
-                    </tr>
-                    <tr>
-                        <td>Ernest Hemingway</td>
-                        <td>Fiction, short stories</td>
-                    </tr>
-				    <tr>
-                        <td>Leo Tolstoy</td>
-                        <td>Fiction, realism</td>
-                    </tr>
-                    <tr>
-                        <td>Stephen King</td>
-                        <td>Fiction, dark fantasy<br> suspense thriller</td>
-                    </tr>
-                </table>
-            </div>
+    <div class= "card-title">Top 3 Favorite Authors</div>
+        <div class= "card-content">
+            <br />
+            <table id="books">
+                <tr>
+                    <th>Name</th>
+                    <th>Genre</th>
+                </tr>
+                <tr>
+                    <td>Ernest Hemingway</td>
+                    <td>Fiction, short stories</td>
+                </tr>
+				<tr>
+                    <td>Leo Tolstoy</td>
+                    <td>Fiction, realism</td>
+                </tr>
+                <tr>
+                    <td>Stephen King</td>
+                    <td>Fiction, dark fantasy<br> suspense thriller</td>
+                </tr>
+            </table>
+        </div>
     </div>			
     </div>
 <script>
+// Object literals for favorite books and authors assigned to variables.
 const theGreatGatsby = {isbn:0261103571, title:"The Great Gatsby", pages:122};
 const warAndPeace = {isbn:1514297272, title:"War and Peace", pages:1225};
 const fahrenheit451 = {isbn:1514298139, title:"Fahrenheit 451", pages:256};
 const ernestHemingway = {name:"Ernest Hemingway", genre:"Fiction, short stories"};
 const leoTolstoy = {name:"Leo Tolstoy", genre:"Fiction, realism"}; 
 const stephenKing = {name:"Stephen King", genre:"Fiction, dark fantasy, suspense thriller"};
+// Containers for favorite books and authors set to initial parameters, hide table (display none) and show table (display block)
 const books = document.getElementById("favorite-books");
 const authors = document.getElementById("favorite-authors");
 authors.style.display = "none";
 books.style.display = "none";
  
 function myFunction() {
- const choice = document.getElementById("favoriteList").value;
+ const choice = document.getElementById("favoriteList").value;  // Captures the values from the select list.
+ // Defines values for each item in the select list
  const favoriteBooks = document.getElementById("favoriteList").value = "books";
  const favoriteAuthors = document.getElementById("favoriteList").value = "authors"; 
  const selectList = document.getElementById("favoriteList").value = "select"; 
  
-   if (choice === favoriteBooks) {
+   if (choice === favoriteBooks) {   // If favorites books is selected, run thecode that follows.
     authors.style.display = "none";
 	books.style.display = "block";
+	document.getElementById("favoriteList").value = "books";
    }
-   else if (choice === favoriteAuthors) {
+   else if (choice === favoriteAuthors) {   //  If favorites authors is selected, run the code that follows.
     authors.style.display = "block";
 	books.style.display = "none";
+	document.getElementById("favoriteList").value = "authors"; 
    }
-   else {
+   else {                              // If no selection is made, hide both tables.
     authors.style.display = "none";
 	books.style.display = "none";
    } 

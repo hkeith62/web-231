@@ -10,7 +10,7 @@
 }
 /* Display sequence button styling */
 #btnDisplaySequence {
-	width: 46.5%;
+	width: 48.2%;
 	padding: 16px;  
 	background-color: #4F3674;
     color: #fff;
@@ -42,7 +42,7 @@ margin-top: 18px;
 }
 /* Label and select input styling */
 #sequence  {
-	padding: 12px 32px;
+	padding: 12px 25px 12px 8px; 
     margin: 15px 0;
     display: inline-block;
     border: 1px solid #ccc;
