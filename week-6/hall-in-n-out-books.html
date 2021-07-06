@@ -38,7 +38,7 @@
             </div>
     </div>
     <div id= "return-home-container"><a href= "../index.html" class="return-home">Return</a></div>
-	<div id= "favorite-books">  <!-- Favorite books card container. -->
+	 <div id= "favorite-books">  <!-- Favorite books card container. -->
 	<div class= "card">
     <div class= "card-title">Top 3 Favorite Books</div>
         <div class= "card-content">
@@ -50,19 +50,19 @@
 					<th>Pages</th>
                 </tr>
                 <tr>
-                    <td>0261103571</td>
-                    <td>The Great Gatsby</td>
-					<td>122</td>
+                    <td id= "theGreatGatsbyIsbn">#</td>
+                    <td id= "theGreatGatsbyTitle">#</td>
+					<td id= "theGreatGatsbyPages">#</td>
                 </tr>
 				<tr>
-                    <td>1514297272</td>
-                    <td>War and Peace</td>
-					<td>1225</td>
+                    <td id= "warAndPeaceIsbn">#</td>
+                    <td id= "warAndPeaceTitle">#</td>
+					<td id= "warAndPeacePages">#</td> 
                 </tr>
                 <tr>
-                    <td>1514298139</td>
-                    <td>Fahrenheit 451</td>
-					<td>256</td>
+                    <td id= "fahrenheit451Isbn">#</td>
+                    <td id= "fahrenheit451Title">#</td>
+					<td id= "fahrenheit451Pages">#</td>
                 </tr>
             </table>
         </div>
@@ -79,16 +79,16 @@
                     <th>Genre</th>
                 </tr>
                 <tr>
-                    <td>Ernest Hemingway</td>
-                    <td>Fiction, short stories</td>
+                    <td id= "ernestHemingwayName">#</td>
+                    <td id= "ernestHemingwayGenre">#</td>
                 </tr>
 				<tr>
-                    <td>Leo Tolstoy</td>
-                    <td>Fiction, realism</td>
+                    <td id= "leoTolstoyName">#</td>
+                    <td id= "leoTolstoyGenre">#</td>
                 </tr>
                 <tr>
-                    <td>Stephen King</td>
-                    <td>Fiction, dark fantasy<br> suspense thriller</td>
+                    <td id= "stephenKingName">#</td>
+                    <td id= "stephenKingGenre">#</td>
                 </tr>
             </table>
         </div>
@@ -96,7 +96,7 @@
     </div>
 <script>
 // Object literals for favorite books and authors assigned to variables.
-const theGreatGatsby = {isbn:0261103571, title:"The Great Gatsby", pages:122};
+const theGreatGatsby = {isbn:020261103571, title:"The Great Gatsby", pages:122};
 const warAndPeace = {isbn:1514297272, title:"War and Peace", pages:1225};
 const fahrenheit451 = {isbn:1514298139, title:"Fahrenheit 451", pages:256};
 const ernestHemingway = {name:"Ernest Hemingway", genre:"Fiction, short stories"};
@@ -107,15 +107,32 @@ const books = document.getElementById("favorite-books");
 const authors = document.getElementById("favorite-authors");
 authors.style.display = "none";
 books.style.display = "none";
- 
+
 function myFunction() {
- const choice = document.getElementById("favoriteList").value;  // Captures the values from the select list.
- // Defines values for each item in the select list
+const choice = document.getElementById("favoriteList").value;  // Captures the values from the select list.
+// Binds object literals to the appropriate table.
+document.getElementById("theGreatGatsbyIsbn").innerHTML = theGreatGatsby.isbn;
+document.getElementById("theGreatGatsbyTitle").innerHTML = theGreatGatsby.title;
+document.getElementById("theGreatGatsbyPages").innerHTML = theGreatGatsby.pages;
+document.getElementById("warAndPeaceIsbn").innerHTML = warAndPeace.isbn;
+document.getElementById("warAndPeaceTitle").innerHTML = warAndPeace.title;
+document.getElementById("warAndPeacePages").innerHTML = warAndPeace.pages;
+document.getElementById("fahrenheit451Isbn").innerHTML = fahrenheit451.isbn;
+document.getElementById("fahrenheit451Title").innerHTML = fahrenheit451.title;
+document.getElementById("fahrenheit451Pages").innerHTML = fahrenheit451.pages;
+document.getElementById("ernestHemingwayName").innerHTML = ernestHemingway.name ;
+document.getElementById("ernestHemingwayGenre").innerHTML = ernestHemingway.genre;
+document.getElementById("leoTolstoyName").innerHTML = leoTolstoy.name;
+document.getElementById("leoTolstoyGenre").innerHTML = leoTolstoy.genre;
+document.getElementById("stephenKingName").innerHTML = stephenKing.name;
+document.getElementById("stephenKingGenre").innerHTML = stephenKing.genre ;
+
+ // Defines values for each item in the select list and assigns them to a variable.
  const favoriteBooks = document.getElementById("favoriteList").value = "books";
  const favoriteAuthors = document.getElementById("favoriteList").value = "authors"; 
  const selectList = document.getElementById("favoriteList").value = "select"; 
  
-   if (choice === favoriteBooks) {   // If favorites books is selected, run thecode that follows.
+   if (choice === favoriteBooks) {   // If favorites books is selected, run the code that follows.
     authors.style.display = "none";
 	books.style.display = "block";
 	document.getElementById("favoriteList").value = "books";

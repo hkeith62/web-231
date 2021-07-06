@@ -1,0 +1,217 @@
+<!--
+    Title: WEB 231 – Enterprise JavaScript I
+    Author: Professor Krasso
+    Date: 05/30/2021
+    Modified By: Keith Hall
+    Description: This is the HTML page for web-231 assignment 6, In-N-Out-Books.
+--> 
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8" /> 
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+    <meta name="keywords" content="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
+    <meta name="robots" content="noindex" />
+    <meta name="author" content="Keith Hall" />
+	<link rel="stylesheet" href="../global.css" />
+	<link rel="stylesheet" href="hall-javazon.css" />
+    <!-- Google fonts for Oswald -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+ <!-- Card content starts here. -->
+    <div class= "card">
+        <h1 class= "app-header">Welcome to the Javazon App!</h1>
+        <div class= "card-title">Javazon Selection Form</div>
+            <div class= "form-feild">
+                <label for= "sequence">Choose a listing:</label> 
+                <select name= "favorites" id="listing" class= "drop-down-menu"> <!-- Select form field. -->
+                    <option value="select" selected>Select</option>
+                    <option value="products">Products</option>
+                    <option value="services">Services</option>
+					<option value="employees">Employees</option>
+                </select>
+			</div>
+            <div class="form-field">
+                <!-- HTML for styling the conversion button and onclick event. -->
+                <button type="submit" id= "btnDisplayListing" onclick="myFunction()">Display Listing</button>
+            </div>
+    </div>
+    <div id= "return-home-container"><a href= "../index.html" class="return-home">Return</a></div>
+	<div id= "products">  <!-- Products card container. -->
+	<div class= "card">
+    <div class= "card-title">Javazon Products</div>
+        <div class= "card-content">
+            <br />
+            <table id="books">
+                <tr>
+                    <th>Product ID</th>
+                    <th>Description</th>
+					<th>Price</th>
+					<th>Quantity</th>
+					<th>Total Value</th>
+                </tr>
+                <tr>
+                    <td>9781118008188</td>
+                    <td>HTML and CSS: Design and Build Websites</td>
+					<td>22.26</td>
+					<td>10</td>
+					<td>222.60</td>
+                </tr>
+				<tr>
+                    <td>9781491952023</td>
+                    <td>Javascript: The Definitive Guide 7/E</td>
+					<td>41.33</td>
+					<td>7</td>
+					<td>289.31</td>
+                </tr>
+                <tr>
+                    <td>9781449331818</td>
+                    <td>Learning Javascript Design Patterns 1/E</td>
+					<td>25.99</td>
+					<td>3</td>
+					<td>77.97</td>
+                </tr>
+				<tr>
+                    <td>9781617292422</td>
+                    <td>Express in Action: Writing, Building, and <br> testing Node.js applications 1/E</td>
+					<td>34.91</td>
+					 <td>3</td>
+					<td>104.73</td>
+                </tr>
+				<tr>
+                    <td>9781491954461</td>
+                    <td>MongoDB: The Definitive Guide</td>
+					<td>33.70</td>
+					 <td>8</td>
+					<td>269.60</td>
+                </tr>
+            </table>
+        </div>
+    </div>		
+    </div> 
+	<div id= "services"><!-- Services card container. -->
+	<div class= "card">
+    <div class= "card-title">Javazon Services</div>
+        <div class= "card-content">
+            <br />
+            <table id="books">
+                <tr>
+                    <th>Service ID</th>
+                    <th>Description</th>
+					<th>Hourly Rate</th>
+                    <th>Minimum Billable Hours</th>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>Website Design</td>
+					<td>150.00</td>
+                    <td>25</td>
+                </tr>
+				<tr>
+                    <td>101</td>
+                    <td>DevOps Consulting</td>
+					<td>125.00</td>
+                    <td>50</td>
+                </tr>
+                    <tr>
+                    <td>102</td>
+                    <td>DataBase Design</td>
+					<td>125.00</td>
+                    <td>15</td>
+                </tr>
+            </table>
+        </div>
+    </div>			
+    </div>
+	<div id= "employees"><!-- Employees card container. -->
+	<div class= "card">
+    <div class= "card-title">Javazon Employees</div>
+        <div class= "card-content">
+            <br />
+            <table id="books">
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Last Name</th>
+					<th>First Name</th>
+                    <th>Salary</th>
+                </tr>
+                <tr>
+                    <td>1007</td>
+                    <td>Beethoven</td>
+					<td>Ludwig</td>
+                    <td>13.99</td>
+                </tr>
+				<tr>
+                    <td>1008</td>
+                    <td>Bach</td>
+					<td>Johann</td>
+                    <td>22.30</td>
+                </tr>
+                <tr>
+                    <td>1009</td>
+                    <td>Mozart</td>
+					<td>Wolfgang</td>
+                    <td>19.50</td>
+                </tr>
+				<tr>
+                    <td>1010</td>
+                    <td>Brahms</td>
+					<td>Johannes</td>
+                    <td>12.00</td>
+                </tr>
+				<tr>
+                    <td>1011</td>
+                    <td>Haydn</td>
+					<td>Joseph</td>
+                    <td>32.50</td>
+                </tr>
+            </table>
+        </div>
+    </div>			
+    </div>
+<script>
+
+const products = document.getElementById("products");
+const services = document.getElementById("services");
+const employees = document.getElementById("employees");
+products.style.display = "none";
+services.style.display = "none";
+employees.style.display = "none";
+
+ function myFunction() {
+ const choice = document.getElementById("listing").value;  // Captures the values from the select list.
+ // Defines values for each item in the select list and assigns them to a variable.
+ const javazonProducts = document.getElementById("listing").value = "products";
+ const javazonServices = document.getElementById("listing").value = "services";
+ const javazonEmployees = document.getElementById("listing").value = "employees"; 
+ const selectList = document.getElementById("listing").value = "select"; 
+ 
+   if (choice === javazonProducts) {   // If favorites books is selected, run the code that follows.
+    services.style.display = "none";
+	products.style.display = "block";
+	employees.style.display = "none";
+	document.getElementById("listing").value = "products";
+   }
+   else if (choice === javazonServices) {   //  If favorites authors is selected, run the code that follows.
+    services.style.display = "block";
+	products.style.display = "none";
+	employees.style.display = "none";
+	document.getElementById("listing").value = "services";
+	
+   } else if (choice === javazonEmployees) {   //  If favorites authors is selected, run the code that follows.
+    services.style.display = "none";
+	products.style.display = "none";
+	employees.style.display = "block";
+	document.getElementById("listing").value = "employees";
+   }
+   else {                              // If no selection is made, hide both tables.
+    authors.style.display = "none";
+	books.style.display = "none";
+   } 
+}
+
+</script> 
+</body>
+</html>
