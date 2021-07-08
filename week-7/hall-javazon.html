@@ -3,7 +3,7 @@
     Author: Professor Krasso
     Date: 05/30/2021
     Modified By: Keith Hall
-    Description: This is the HTML page for web-231 assignment 6, In-N-Out-Books.
+    Description: This is the HTML page for web-231 assignment 7, Javazon App.
 --> 
 <!DOCTYPE html>
 <html lang="en"> 
@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="../global.css" />
 	<link rel="stylesheet" href="hall-javazon.css" />
     <!-- Google fonts for Oswald -->
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet" /> 
 </head>
 <body>
  <!-- Card content starts here. -->
@@ -52,6 +52,7 @@
 					<th>Quantity</th>
 					<th>Total Value</th>
                 </tr>
+				<!-- Javazon products table data. -->
                 <tr>
                     <td id= "htmlCssId">#</td>
                     <td id= "htmlCssDescription">#</td>
@@ -103,7 +104,7 @@
 					<th>Hourly Rate</th>
                     <th>Minimum Billable Hours</th>
                 </tr>
-                <tr>
+                <tr>  <!-- Javazon services table data. -->
                     <td id= "websiteDesignId">#</td>
                     <td id= "websiteDesignDescription">#</td>
 					<td id= "websiteDesignHourlyRate">#</td>
@@ -137,7 +138,7 @@
 					<th>First Name</th>
                     <th>Salary</th>
                 </tr>
-                <tr>
+                <tr> <!-- Javazon employees table data. -->
                     <td id= "beethovenId">#</td>
                     <td id= "beethovenLastName">#</td>
 					<td id= "beethovenFirstName">#</td>
@@ -174,20 +175,21 @@
 <script>
 // Class templates used to produce javascript objects
 class Products {
-  constructor(id, description, price, quantity, totalValue) {
+  constructor(id, description, price, quantity, totalValue) { // Properties that will become objects when initialized by "new Products."
     this.id = id;
     this.description = description;
     this.price = price;
     this.quantity = quantity;
-	let x = price*quantity;
-	this.totalValue = x.toFixed(2);
+	const value = price*quantity;
+	this.totalValue = value.toFixed(2);  // .toFixed(2) to arrive at two decimal points.
   }
 }
 class Services {
-  constructor(id, description, hourlyRate, min) {
+  constructor(id, description, hourlyRate, min) {   // Properties that will become objects when initialized by "new Services."
     this.id = id;
     this.description = description;
-    this.hourlyRate = hourlyRate;
+	const rateByHour = hourlyRate;
+    this.hourlyRate = rateByHour.toFixed(2);  
     this.min = min;
   }
 }
@@ -199,7 +201,7 @@ class Employees {
     this.salary = salary;
   }
 }
-// Initializes objects from the constructor template (Products)
+// Creates/initializes objects from the constructor templates (Products)
 const javazonProductsHtmlCss = new Products(9182117749110, "HTML and CSS: Design and Build Websites", 22.26, 10, "");
 const javazonProductsGuide = new Products(9183112008188, "Javascript: The Definitive Guide 7/E", 41.33, 7, "");
 const javazonProductsLearning =new Products(9184114010189, "Learning Javascript Design Patterns 1/E", 25.99, 3, "");
@@ -275,10 +277,7 @@ document.getElementById("haydnId").innerHTML = javazonEmployeesHaydn.id;
 document.getElementById("haydnLastName").innerHTML = javazonEmployeesHaydn.lastName;
 document.getElementById("haydnFirstName").innerHTML = javazonEmployeesHaydn.firstName;
 document.getElementById("haydnSalary").innerHTML = javazonEmployeesHaydn.salary;
-
-// .toFixed(2) to arrive at two decimal points.
-
-// Hide and display cards.
+// Hide or display tables.
 const products = document.getElementById("products");
 const services = document.getElementById("services");
 const employees = document.getElementById("employees");
@@ -287,39 +286,41 @@ services.style.display = "none";
 employees.style.display = "none";
 
  function myFunction() {
- const choice = document.getElementById("listing").value;  // Captures the values from the select list.
+ const choice = document.getElementById("listing").value;   
  // Defines values for each item in the select list and assigns them to a variable.
  const javazonProducts = document.getElementById("listing").value = "products";
  const javazonServices = document.getElementById("listing").value = "services";
  const javazonEmployees = document.getElementById("listing").value = "employees"; 
  const selectList = document.getElementById("listing").value = "select"; 
- 
-   switch (choice) {   // If favorites books is selected, run the code that follows.
+   // If Javazon Products is selected, run the code that follows.
+   switch (choice) {    
     case javazonProducts:
 	services.style.display = "none";
 	products.style.display = "block";
 	employees.style.display = "none";
+	document.getElementById("listing").value = "products";
     break;
-          //  If favorites authors is selected, run the code that follows.
+    //  If Javazon Services is selected, run the code that follows.
     case javazonServices:
 	services.style.display = "block";
 	products.style.display = "none";
 	employees.style.display = "none";
+	document.getElementById("listing").value = "services";
 	break;
-	 //  If favorites authors is selected, run the code that follows.
+	//  If Javazon Employees is selected, run the code that follows.
     case javazonEmployees:
     services.style.display = "none";
 	products.style.display = "none";
 	employees.style.display = "block";
+	document.getElementById("listing").value = "employees"; 
     break;
-	
-    default:                              // If no selection is made, hide both tables.
-    authors.style.display = "none";
-	books.style.display = "none";
-   
+	// If no selection is made, hide all tables.
+    default:    
+    products.style.display = "none";
+    services.style.display = "none";
+    employees.style.display = "none"; 
+  }
 }
-}
-
 </script> 
 </body>
 </html>
