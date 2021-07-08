@@ -110,7 +110,7 @@ books.style.display = "none";
 
 function myFunction() {
 const choice = document.getElementById("favoriteList").value;  // Captures the values from the select list.
-// Binds object literals to the appropriate table.
+// Binds object literals to the appropriate table row.
 document.getElementById("theGreatGatsbyIsbn").innerHTML = theGreatGatsby.isbn;
 document.getElementById("theGreatGatsbyTitle").innerHTML = theGreatGatsby.title;
 document.getElementById("theGreatGatsbyPages").innerHTML = theGreatGatsby.pages;
@@ -132,20 +132,22 @@ document.getElementById("stephenKingGenre").innerHTML = stephenKing.genre ;
  const favoriteAuthors = document.getElementById("favoriteList").value = "authors"; 
  const selectList = document.getElementById("favoriteList").value = "select"; 
  
-   if (choice === favoriteBooks) {   // If favorites books is selected, run the code that follows.
-    authors.style.display = "none";
+   switch (choice === favoriteBooks) {   // If favorites books is selected, run the code that follows.
+    case: authors.style.display = "none";
 	books.style.display = "block";
 	document.getElementById("favoriteList").value = "books";
-   }
-   else if (choice === favoriteAuthors) {   //  If favorites authors is selected, run the code that follows.
+    break;
+	
+    case: (choice === favoriteAuthors) {   //  If favorites authors is selected, run the code that follows.
     authors.style.display = "block";
 	books.style.display = "none";
 	document.getElementById("favoriteList").value = "authors"; 
-   }
-   else {                              // If no selection is made, hide both tables.
+    break;
+	
+    case:                             // If no selection is made, hide both tables.
     authors.style.display = "none";
 	books.style.display = "none";
-   } 
+   
 }
 </script> 
 </body>

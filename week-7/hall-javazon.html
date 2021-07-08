@@ -39,7 +39,7 @@
             </div>
     </div>
     <div id= "return-home-container"><a href= "../index.html" class="return-home">Return</a></div>
-<div id= "products">  <!-- Products card container. -->
+	<div id= "products">  <!-- Products card container. -->
 	<div class= "card">
     <div class= "card-title">Javazon Products</div>
         <div class= "card-content">
@@ -179,7 +179,8 @@ class Products {
     this.description = description;
     this.price = price;
     this.quantity = quantity;
-	this.totalValue = totalValue;
+	let x = price*quantity;
+	this.totalValue = x.toFixed(2);
   }
 }
 class Services {
@@ -293,28 +294,30 @@ employees.style.display = "none";
  const javazonEmployees = document.getElementById("listing").value = "employees"; 
  const selectList = document.getElementById("listing").value = "select"; 
  
-   if (choice === javazonProducts) {   // If favorites books is selected, run the code that follows.
-    services.style.display = "none";
+   switch (choice) {   // If favorites books is selected, run the code that follows.
+    case javazonProducts:
+	services.style.display = "none";
 	products.style.display = "block";
 	employees.style.display = "none";
-	document.getElementById("listing").value = "products";
-   }
-   else if (choice === javazonServices) {   //  If favorites authors is selected, run the code that follows.
-    services.style.display = "block";
+    break;
+          //  If favorites authors is selected, run the code that follows.
+    case javazonServices:
+	services.style.display = "block";
 	products.style.display = "none";
 	employees.style.display = "none";
-	document.getElementById("listing").value = "services";
-	
-   } else if (choice === javazonEmployees) {   //  If favorites authors is selected, run the code that follows.
+	break;
+	 //  If favorites authors is selected, run the code that follows.
+    case javazonEmployees:
     services.style.display = "none";
 	products.style.display = "none";
 	employees.style.display = "block";
-	document.getElementById("listing").value = "employees";
-   }
-   else {                              // If no selection is made, hide both tables.
+    break;
+	
+    default:                              // If no selection is made, hide both tables.
     authors.style.display = "none";
 	books.style.display = "none";
-   } 
+   
+}
 }
 
 </script> 
