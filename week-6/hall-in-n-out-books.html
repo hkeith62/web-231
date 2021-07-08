@@ -132,22 +132,20 @@ document.getElementById("stephenKingGenre").innerHTML = stephenKing.genre ;
  const favoriteAuthors = document.getElementById("favoriteList").value = "authors"; 
  const selectList = document.getElementById("favoriteList").value = "select"; 
  
-   switch (choice === favoriteBooks) {   // If favorites books is selected, run the code that follows.
-    case: authors.style.display = "none";
+   if (choice === favoriteBooks) {   // If favorites books is selected, run the code that follows.
+    authors.style.display = "none";
 	books.style.display = "block";
 	document.getElementById("favoriteList").value = "books";
-    break;
-	
-    case: (choice === favoriteAuthors) {   //  If favorites authors is selected, run the code that follows.
+   }
+   else if (choice === favoriteAuthors) {   //  If favorites authors is selected, run the code that follows.
     authors.style.display = "block";
 	books.style.display = "none";
 	document.getElementById("favoriteList").value = "authors"; 
-    break;
-	
-    case:                             // If no selection is made, hide both tables.
+   }
+   else {                              // If no selection is made, hide both tables.
     authors.style.display = "none";
 	books.style.display = "none";
-   
+   } 
 }
 </script> 
 </body>
