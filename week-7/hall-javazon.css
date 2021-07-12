@@ -3,12 +3,12 @@
     Author: Professor Krasso
     Date: 05/30/2021
     Modified By: Keith Hall
-    Description: This is the css style sheet for web-231 assignment 6, In-N-Out-Books. 
+    Description: This is the css style sheet for web-231 assignment 7, Javazon App. 
 */
 .app-header {
 	text-align: center;
 }
-/* Display sequence button styling */
+/* Display listing button styling */
 #btnDisplayListing {
 	width: 42.5%;
 	padding: 16px;  
@@ -35,19 +35,13 @@ margin-top: 12px;
 .card {
 	margin: auto; 
 }
-/* Container for results button */
+/* Javazon selection form text */
 .card-title {
 	margin-top: 50px;
 	margin-bottom: 25px;
 }
 /* Label and select input styling */
-#favoriteList  {
-	width: 32.7%;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    font-size: 16px;
-}
+ 
 .form-feild {
 	margin-left: 132px;
 }
