@@ -1,9 +1,9 @@
-/**
+ /**
     Title: WEB 231 – Enterprise JavaScript I
     Author: Professor Krasso
     Date: 05/30/2021
     Modified By: Keith Hall
-    Description: This is the css style sheet for web-231 assignment 6, In-N-Out-Books. 
+    Description: This is the css style sheet for web-231 assignment 8, Alpahbet Game. 
 */
 .app-header {
 	text-align: center;
@@ -20,7 +20,6 @@ p  {
 .card {
 	margin: auto;
 }
-/* Container for results button */
 .card-title {
  	padding: 54px 0 6px 0;
 }
@@ -36,7 +35,7 @@ p  {
 .form-feild {
 	margin-left: 128px;
 }
-/* Submit button styling */
+/* Find letter button styling */
 #btnFindLetter {
 	width: 45%;
 	padding: 16px;  
@@ -52,7 +51,7 @@ p  {
     color: #4F3674;
 }
 #alphabet{
-    text-align: center;
+    text-align: center; /* Alphabet Text */
 }
 .card-content {
     width: 550px;
